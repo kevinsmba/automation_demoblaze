@@ -32,5 +32,6 @@ describe('example to-do app', () => {
     cy.get('#sign-username').clear().type(email);
     cy.get('#sign-password').clear().type(password);
     cy.contains('button.btn.btn-primary', 'Sign up').click();
+    //test
   })
 })

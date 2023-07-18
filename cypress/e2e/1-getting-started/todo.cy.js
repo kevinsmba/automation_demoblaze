@@ -23,7 +23,7 @@ describe('example to-do app', () => {
     cy.visit('https://www.demoblaze.com/index.html#');
     cy.contains('#nava','PRODUCT STORE');
   })
-  //username password and sign up
+  //random username password and sign up
   it('Write a username and password and complete the sign up', async ()=>{
     cy.visit('https://www.demoblaze.com/index.html#');
     const email = faker.internet.email();
@@ -32,5 +32,14 @@ describe('example to-do app', () => {
     cy.get('#sign-username').clear().type(email);
     cy.get('#sign-password').clear().type(password);
     cy.contains('button.btn.btn-primary', 'Sign up').click();
+  })
+  //select a Samsung galaxy s6 and add it to the cart, also verify in the cart if it was added successfully
+  it('Add a product to the cart', async ()=>{
+    cy.visit('https://www.demoblaze.com/index.html#');
+    cy.contains('Samsung galaxy s6').click();
+    cy.get('a[onclick="addToCart(1)"][class="btn btn-success btn-lg"]').should('be.visible').click();
+    cy.get('#cartur').click();
+    cy.contains('h2','Total').should('have.text', 'Total');
+    cy.get('#totalp').should('have.text','360');
   })
 })

@@ -2,7 +2,7 @@
 
 
 //Given the user visits DemoBlaze page
-describe('Check the purchase of a product', () => {
+describe('Check the purchase of a cellphone', () => {
 
     before(() => {
         cy.visit('https://www.demoblaze.com/index.html#');

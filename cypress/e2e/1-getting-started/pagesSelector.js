@@ -17,7 +17,7 @@ class SelectorsDemoblaze {
     goToCart(){
         this.elements.globalCartButton().click().wait(6000);
     }
-    priceValidarion(chainers,amount){
+    priceValidation(chainers,amount){
         this.elements.ProductPrice().should(chainers, amount); 
     }
     BrowserNotifAccept(){

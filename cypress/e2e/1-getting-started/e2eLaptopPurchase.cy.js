@@ -10,11 +10,10 @@ describe('Check the purchase of a laptop', () => {
     });
 
     it('Given the user adds the product to the cart', async () => {
-        cy.on('window:alert', (text) => { return true });
         selectors.ClickLaptopCategory();
-        selectors.ClickMacBookAir();
+        selectors.clickProduct('MacBook air');
         selectors.addToCart();
         selectors.goToCart();
-        selectors.priceValidation('have.text', '700');
+        selectors.priceValidation('700');
     });
 })

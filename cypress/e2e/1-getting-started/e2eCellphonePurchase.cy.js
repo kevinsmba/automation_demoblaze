@@ -9,11 +9,10 @@ describe('Check the purchase of a cellphone', () => {
     });
 
     it('Given the user adds the product to the cart', async () => {
-        cy.on('window:alert', (text) => {return true});
-        selectors.selectDevice();
+        selectors.clickProduct('Samsung galaxy s6');
         selectors.addToCart();
         selectors.goToCart();
-        selectors.priceValidarion('have.text', '360');
+        selectors.priceValidation('360');
     });
 })
 

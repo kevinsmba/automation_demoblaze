@@ -1,16 +1,26 @@
 class SelectorsDemoblaze {
-    constructor() { }
-    selectSamsungGalaxyS6() {
-        return cy.contains('a', 'Samsung galaxy s6');
+    elements = {
+        selectSamsungGalaxyS6: () => cy.contains('a', 'Samsung galaxy s6').should('contain', 'Samsung galaxy s6'),
+        productAddCart: () => cy.contains('a', 'Add to cart').should('be.visible'),
+        globalCartButton: () => cy.get('#cartur'),
+        ProductPrice: () => cy.get('#totalp'),
+        acceptBrowserNoti: () => cy.on('window:alert', (text) => {return true})
+    };
+    selectDevice(){
+        this.elements.selectSamsungGalaxyS6().click();
     }
-    productAddCart() {
-        return cy.contains('a', 'Add to cart').should('be.visible');
+    addToCart(){
+        this.elements.productAddCart().click();
     }
-    globalCartButton() {
-        return cy.get('#cartur');
+    goToCart(){
+        this.elements.globalCartButton().click().wait(6000);
     }
-    ProductPrice() {
-        return cy.get('#totalp');
+    priceValidarion(chainers,amount){
+        this.elements.ProductPrice().should(chainers, amount); 
+        cy.screenshot();
+    }
+    BrowserNotifAccept(){
+        this.elements.acceptBrowserNoti();
     }
 }
-export default SelectorsDemoblaze;
+export const selectors = new SelectorsDemoblaze();

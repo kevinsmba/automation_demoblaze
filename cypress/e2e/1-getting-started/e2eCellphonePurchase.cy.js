@@ -1,7 +1,5 @@
 /// <reference types="cypress" />
-import actionsDemoblaze from "./actionsSelectors";
-import SelectorsDemoblaze from "./pagesSelector";
-
+import { selectors } from "./pagesSelector";
 
 //Given the user visits DemoBlaze page
 describe('Check the purchase of a cellphone', () => {
@@ -11,12 +9,11 @@ describe('Check the purchase of a cellphone', () => {
     });
 
     it('Given the user adds the product to the cart', async () => {
-        const actions = new actionsDemoblaze();
-        const selectors = new SelectorsDemoblaze();
-        actions.selectDevice;
-        actions.addToCart;
-        actions.goToCart;
-        selectors.ProductPrice().should('have.text','360');
+        cy.on('window:alert', (text) => {return true});
+        selectors.selectDevice();
+        selectors.addToCart();
+        selectors.goToCart();
+        selectors.priceValidarion('have.text', '360');
     });
 })
 

@@ -8,7 +8,7 @@ class SelectorsDemoblaze {
         acceptBrowserNoti: () => cy.on('window:alert', (text) => {return true})
     };
     clickProduct(productname){
-        this.elements.selectProduct(productname).click();
+        this.elements.selectProduct(productname).should('contain', productname).click();
     }
     addToCart(){
         this.elements.productAddCart().click();

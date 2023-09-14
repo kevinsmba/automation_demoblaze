@@ -13,14 +13,20 @@ class toolsQAactions {
     typeFirstName(name){
         selectors.elements.practiceFormFname().type(name);
     }
-    clickSelectMenu(){
-        selectors.elements.WidgetsSelectMenu().click();
+    clickSelectMenu(selectModule){
+        selectors.elements.WidgetsSelectMenu(selectModule).click();
     }
     clickColorsDropdown(){
         selectors.elements.WidgetDropdown().click();
     }
     selectDropdownOption(color){
         selectors.elements.getDropdown().select(color);
+    }
+    verifyColorDropDown(color){
+        selectors.elements.getDropdown().find('option:selected').should('have.text', color);
+    }
+    selectCarBrand(carBrand){
+        selectors.elements.carSelection().select(carBrand)
     }
 }
 

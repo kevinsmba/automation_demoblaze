@@ -5,7 +5,7 @@ const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
 const cucumber = require("@badeball/cypress-cucumber-preprocessor");
 const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esbuild");
 
-const stepDefinitionsDirectory = "cypress/support/step_definitions/*.{js,mjs,ts,tsx}";
+const stepDefinitionsDirectory = "cypress/e2e/step_definitions/*.{js,mjs,ts,tsx}";
 
 async function setupNodeEvents(on, config) {
   // This is required for the preprocessor to be able to generate JSON reports after each run, and more,

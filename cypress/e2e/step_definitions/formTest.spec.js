@@ -1,5 +1,5 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-import { actions } from "../../e2e/Actions/actions";
+import { actions } from "../Actions/actions";
 
 When('Practice form is clicked', () => {
     actions.clickPracticeForm();

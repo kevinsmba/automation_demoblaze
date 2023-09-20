@@ -10,6 +10,6 @@ class toolsQAselectors {
     };
 };
 
-export const selectors = new toolsQAselectors();
+export const selectorsTQA = new toolsQAselectors();
 
 // WidgetsSelectMenu: () => cy.get('.btn.btn-light').contains('Select Menu'),

@@ -1,12 +1,12 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-import { actions } from "../Actions/actions";
+import { actionsTQA } from "../Actions/actionsToolsQA";
 
 When('Practice form is clicked', () => {
-    actions.clickPracticeForm();
+    actionsTQA.clickPracticeForm();
 })
 When('Fill the First Name with {string}', (firstName) => {
-    actions.typeFirstName(firstName);
+    actionsTQA.typeFirstName(firstName);
 })
 /*Then('Verify the title {string} of the page', (header) => {
-    actions.CheckMainHeader(header);
+    actionsTQA.CheckMainHeader(header);
 })*/

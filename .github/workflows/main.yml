@@ -14,9 +14,9 @@ jobs:
         browser: [chrome, edge] 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4.1.1
       - name: Run smoke tests on Cypress.io
-        uses: cypress-io/github-action@v7
+        uses: cypress-io/github-action@v6.5.0
         with:
           browser: ${{ matrix.browser }}
           script: npm run cypress:smoke
@@ -28,9 +28,9 @@ jobs:
         browser: [chrome, edge]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4.1.1
       - name: Run tag tests on Cypress.io
-        uses: cypress-io/github-action@v7
+        uses: cypress-io/github-action@v6.5.0
         with:
           browser: ${{ matrix.browser }}
           script: npm run cypress:tagtest

@@ -15,4 +15,4 @@ jobs:
       - name: Cypress.io
         uses: cypress-io/github-action@v6.5.0
         with:
-          browser: chrome, firefox
+          browser: [chrome, firefox]

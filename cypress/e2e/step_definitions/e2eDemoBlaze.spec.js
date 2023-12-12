@@ -15,6 +15,7 @@ Then('Verify the lenght of the {string} category to be {string}', (categoryHomeS
     cy.get('#tbodyid')
 // Get all the child elements of the element
     .children()
+    .wait(8000)
 // Assert that the number of child elements is equal to 7
     .should('have.length', lenghtNumber);
 });

@@ -16,17 +16,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4.1.1
 
-      - name: Install dependencies
-        run: |
-          yarn install --frozen-lockfile
-          yarn lint
-          yarn tsc --noEmit
-
       - name: Run smoke tests on Cypress.io
         uses: cypress-io/github-action@v6.5.0
         with:
+          build: npm run build
           browser: ${{ matrix.browser }}
-          script: npm run cypress:smoke
+          script: npm run cypress:tagtest
   
   tagtest-run:
     runs-on: ubuntu-latest
@@ -37,18 +32,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4.1.1
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Debug
-        run: |
-            echo "Tags: $TAGS"
-            npm run cy:run -- --spec "cypress/integration/**/*.feature" --env TAGS="$TAGS"
-        env:
-          TAGS: "@Tagtest" 
-
       - name: Run tag tests on Cypress.io
         uses: cypress-io/github-action@v6.5.0
         with:
+          build: npm run build
           browser: ${{ matrix.browser }}
           script: npm run cypress:tagtest

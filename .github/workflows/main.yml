@@ -23,7 +23,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: ${{ matrix.browser }}
-          script: npm run cypress:tagtest
+          script: npm run cypress:smoke
   
   tagtest-run:
     runs-on: ubuntu-latest

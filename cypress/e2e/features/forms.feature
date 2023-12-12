@@ -1,6 +1,6 @@
 
 Feature: Verify Form flows 
-    @Forms
+    @Tagtest
     Scenario: Verify that home page is loaded
         Given The user is in the Tools QA Homepage
         When click the "Forms" icon

@@ -16,8 +16,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4.1.1
 
+      - name: Install dependencies
+        run: npm ci
+
       - name: Run smoke tests on Cypress.io
-        uses: cypress-io/github-action@v6.5.0
+        uses: cypress-io/github-action@v6
         with:
           build: npm run build
           browser: ${{ matrix.browser }}
@@ -32,8 +35,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4.1.1
 
+      - name: Install dependencies
+        run: npm ci
+        
       - name: Run tag tests on Cypress.io
-        uses: cypress-io/github-action@v6.5.0
+        uses: cypress-io/github-action@v6
         with:
           build: npm run build
           browser: ${{ matrix.browser }}

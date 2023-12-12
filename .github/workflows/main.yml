@@ -37,6 +37,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install tags dependency
+        run: npm install --save-dev cypress-tags
+        
       - name: Run tag tests on Cypress.io
         uses: cypress-io/github-action@v6
         with:

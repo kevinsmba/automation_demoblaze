@@ -9,6 +9,6 @@ Feature: DemoBlaze Home page category e2e
 
         Examples:
             | Categories |  First Product       |   Lenght  |
-            | Phones     |  Samsung galaxy s6   |     7     |
+            | Phones     |  Samsung galaxy s6   |     16    |
             | Laptops    |  Sony vaio i5        |     6     |
             | Monitors   |  Apple monitor 24    |     2     |

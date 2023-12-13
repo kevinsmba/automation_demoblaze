@@ -27,6 +27,12 @@ jobs:
         with:
           browser: ${{ matrix.browser }}
           script: npm run cypress:smoke
+
+      - name: Upload screenshots as artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: tagtest-screenshots-${{ matrix.browser }}
+          path: cypress/screenshots
   
   tagtest-run:
     runs-on: ubuntu-latest
@@ -48,3 +54,9 @@ jobs:
         with:
           browser: ${{ matrix.browser }}
           script: npm run cypress:tagtest
+
+      - name: Upload screenshots as artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: tagtest-screenshots-${{ matrix.browser }}
+          path: cypress/screenshots

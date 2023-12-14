@@ -23,7 +23,7 @@ jobs:
         run: npm install --save-dev cypress-tags
 
       - name: Run smoke tests on Cypress.io
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v6 tags=@SmokeTest
         with:
           browser: ${{ matrix.browser }}
           script: npm run notexist

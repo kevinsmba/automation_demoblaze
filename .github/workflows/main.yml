@@ -26,7 +26,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: ${{ matrix.browser }}
-          script: npm run cypress:smoke
+          script: npm run notexist
 
       - name: Upload screenshots as artifacts
         uses: actions/upload-artifact@v3

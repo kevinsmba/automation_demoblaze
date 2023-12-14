@@ -17,5 +17,6 @@ Then('Verify the lenght of the {string} category to be {string}', (categoryHomeS
     .children()
     .wait(8000)
 // Assert that the number of child elements is equal to 7
+//test
     .should('have.length', lenghtNumber);
 });

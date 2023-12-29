@@ -7,6 +7,9 @@ Given('The user visit the DemoBlaze URL', () => {
 When('Click in the category {string}', (categoryHomeSelection) => {
     actionsDB.clickCategory(categoryHomeSelection);
 });
+When('Click again in the category {string}', (categoryHomeSelection) => {
+    actionsDB.clickCategory(categoryHomeSelection);
+});
 Then('Verify that the first product in the {string} is {string}', (categoryHomeSelection, firstElement) => {
     actionsDB.ValidateFirstElement(firstElement);
 });
@@ -15,7 +18,6 @@ Then('Verify the lenght of the {string} category to be {string}', (categoryHomeS
     cy.get('#tbodyid')
 // Get all the child elements of the element
     .children()
-    .wait(8000)
 // Assert that the number of child elements is equal to 7
 //test
     .should('have.length', lenghtNumber);

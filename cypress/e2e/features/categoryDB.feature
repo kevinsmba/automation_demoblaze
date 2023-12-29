@@ -5,6 +5,7 @@ Feature: DemoBlaze Home page category e2e
     Scenario Outline: Click the <Categories> category verify that the first product is <First Product> and Length to be <Lenght>
         When Click in the category "<Categories>"
         Then Verify that the first product in the "<Categories>" is "<First Product>"
+        When Click again in the category "<Categories>"
         And Verify the lenght of the "<Categories>" category to be "<Lenght>"
 
         Examples:

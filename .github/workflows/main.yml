@@ -27,8 +27,8 @@ jobs:
         with:
           browser: ${{ matrix.browser }}
           script: npm run cypress:smoke
-          env: # define the environment variable at the step level
-            tags: @SmokeTest
+        env: # define the environment variable at the step level
+          tags: @SmokeTest
 
       - name: Upload screenshots as artifacts
         uses: actions/upload-artifact@v3

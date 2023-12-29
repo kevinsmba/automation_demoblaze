@@ -34,29 +34,3 @@ jobs:
           name: tagtest-screenshots-${{ matrix.browser }}
           path: cypress/screenshots
   
-  tagtest-run:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        browser: [chrome]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4.1.1
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Install tags dependency
-        run: npm install --save-dev cypress-tags
-
-      - name: Run tag tests on Cypress.io
-        uses: cypress-io/github-action@v6
-        with:
-          browser: ${{ matrix.browser }}
-          script: npm run cypress:tagtest
-
-      - name: Upload screenshots as artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: tagtest-screenshots-${{ matrix.browser }}
-          path: cypress/screenshots

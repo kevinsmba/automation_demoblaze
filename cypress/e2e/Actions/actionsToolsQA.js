@@ -7,12 +7,6 @@ class toolsQAactions {
     CheckMainHeader(header){
         selectorsTQA.elements.mainHeader().should('have.text',header);
     }
-    clickPracticeForm(){
-        selectorsTQA.elements.practiceForm().click();
-    }
-    typeFirstName(name){
-        selectorsTQA.elements.practiceFormFname().type(name);
-    }
     clickSelectMenu(selectModule){
         selectorsTQA.elements.WidgetsSelectMenu(selectModule).click();
     }

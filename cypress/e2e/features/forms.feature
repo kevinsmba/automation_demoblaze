@@ -12,4 +12,3 @@ Feature: Verify Form flows
         And Type the number "3219087896"
         And Enter the user's birthdate to "1997","June","02"
         And Select the checkbox Sports and Reading
-        And Select the country "NCR" on the displayable list

@@ -6,8 +6,8 @@
   "scripts": {
     "cypress:runner": "npx cypress open --e2e --browser chrome",
     "cypress:headless": "npx cypress run",
-    "cypress:smoke": "npx cypress run --env tags=@SmokeTest",
-    "cypress:tagtest": "npx cypress run --env tags=@Tagtest"
+    "cy:run:smoketest": "npx cypress run --env tags='@SmokeTest'",
+    "cy:run:tagtest": "npx cypress run --env tags='@Tagtest'"
   },
   "author": "kevinTorres",
   "license": "ISC",

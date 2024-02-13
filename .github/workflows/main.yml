@@ -1,33 +1,21 @@
-name: Cypress CI/CD
-on: 
-  push: 
-    branches: [main, master]
-  pull_request: 
-    branches: [main, master]
-jobs: 
-  smoke-run:
-    runs-on: ubuntu-latest
-    strategy: 
-      matrix: 
-        browser: [chrome]
+name: Cypress Tests
+
+on: push
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4.1.1
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Install tags dependency
-        run: npm install --save-dev cypress-tags
-
-      - name: Run smoke tests on Cypress.io
+      - name: Install Cypress
         uses: cypress-io/github-action@v6
         with:
-          browser: ${{ matrix.browser }}
-          script: npm run cypress:smoke
-      - name: Upload screenshots as artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: tagtest-screenshots-${{ matrix.browser }}
-          path: cypress/screenshots
-  
+          runTests: false
+
+      - name: Run cucumber tag test
+        run: npm run cy:run:tagtest
+
+      - name: Run cucumber tag smoke test
+        run: npm run cy:run:smoketest
